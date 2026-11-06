@@ -19,6 +19,19 @@
   }
 }
 
+/* Prevent iOS Safari auto-zoom on input focus (requires font-size >= 16px on mobile) */
+@media screen and (max-width: 640px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
 /* Ensure AOS elements never cause horizontal document stretching */
 [data-aos] {
   overflow-x: hidden;

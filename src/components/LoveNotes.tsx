@@ -179,7 +179,7 @@ export const LoveNotes: React.FC = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
               <div>
-                <label className="block text-[11px] font-semibold text-slate-600 mb-1">Votre Prénom *</label>
+                <label className="block text-xs font-semibold text-slate-600 mb-1">Votre Prénom *</label>
                 <input
                   type="text"
                   required
@@ -187,24 +187,24 @@ export const LoveNotes: React.FC = () => {
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
                   placeholder="Ex : Julie, Papi Jean, Anthony..."
-                  className="w-full px-3 py-2 rounded-xl text-xs bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
+                  className="w-full px-3 py-2.5 rounded-xl text-[16px] sm:text-xs bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-semibold text-slate-600 mb-1">Lien / Relation (facultatif)</label>
+                <label className="block text-xs font-semibold text-slate-600 mb-1">Lien / Relation (facultatif)</label>
                 <input
                   type="text"
                   maxLength={100}
                   value={relation}
                   onChange={(e) => setRelation(e.target.value)}
                   placeholder="Ex : Marraine, Tata, Tonton, Ami..."
-                  className="w-full px-3 py-2 rounded-xl text-xs bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
+                  className="w-full px-3 py-2.5 rounded-xl text-[16px] sm:text-xs bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
                 />
               </div>
             </div>
 
             <div className="mb-3">
-              <label className="block text-[11px] font-semibold text-slate-600 mb-1">Votre Message *</label>
+              <label className="block text-xs font-semibold text-slate-600 mb-1">Votre Message *</label>
               <textarea
                 required
                 rows={3}
@@ -212,7 +212,7 @@ export const LoveNotes: React.FC = () => {
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 placeholder="Un mot d'encouragement, un doux vœu pour le bébé..."
-                className="w-full px-3 py-2 rounded-xl text-xs bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
+                className="w-full px-3 py-2.5 rounded-xl text-[16px] sm:text-xs bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
               />
             </div>
 
