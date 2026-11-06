@@ -137,13 +137,13 @@ export const LoveNotes: React.FC = () => {
         <div className="text-center max-w-lg mx-auto mb-8">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-[11px] font-semibold text-pink-700 shadow-sm mb-2">
             <FaHeart className="text-pink-500 animate-pulse" />
-            <span>Mots doux pour Edenn</span>
+            <span>Mots doux pour Eden</span>
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight">
-            Le Livre d'Amour d'Emma, Anthony & Edenn
+            Le Livre d'Amour d'Emma, Anthony & Eden
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 font-light mt-1">
-            Laissez un message, une attention ou un souvenir pour célébrer la venue d'Edenn.
+            Laissez un message, une attention ou un souvenir pour célébrer la venue d'Eden.
           </p>
 
           <div className="mt-4 flex items-center justify-center gap-2">
@@ -173,7 +173,7 @@ export const LoveNotes: React.FC = () => {
             className="mb-8 p-5 bg-white/95 rounded-2xl border border-pink-200 shadow-sm animate-in fade-in zoom-in-95 duration-200"
           >
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-600 mb-3 flex items-center gap-1.5">
-              <span>Nouveau message pour Edenn et ses parents</span>
+              <span>Nouveau message pour Eden et ses parents</span>
               <FaHeart className="text-pink-400 text-[10px]" />
             </h3>
             
@@ -256,7 +256,7 @@ export const LoveNotes: React.FC = () => {
             <FaRegFaceSmile className="text-3xl text-pink-300 mx-auto mb-2" />
             <p className="text-sm font-semibold text-slate-700">Aucun message pour le moment</p>
             <p className="text-xs text-slate-400 mt-1">
-              Soyez le premier à déposer un mot doux pour Emma, Anthony et le petit Edenn !
+              Soyez le premier à déposer un mot doux pour Emma, Anthony et le petit Eden !
             </p>
             <button
               onClick={() => setShowForm(true)}

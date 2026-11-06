@@ -41,7 +41,7 @@ export const PREGNANCY_MONTHS: MonthSection[] = [
     "babyComparison": "Une petite framboise",
     "babySize": "~1.5 cm",
     "dateRange": "Décembre 2025",
-    "quote": "Un tout petit cœur commence à battre au creux du ventre d'Emma... Anthony et Emma découvrent avec émotion le tout début de l'histoire d'Edenn.",
+    "quote": "Un tout petit cœur commence à battre au creux du ventre d'Emma... Anthony et Emma découvrent avec émotion le tout début de l'histoire d'Eden.",
     "icon": "FaHeart",
     "items": [
       {
@@ -88,7 +88,7 @@ export const PREGNANCY_MONTHS: MonthSection[] = [
     "babyComparison": "Une belle prune",
     "babySize": "~6 à 7 cm",
     "dateRange": "Janvier - Février 2026",
-    "quote": "Les petits doigts et les orteils d'Edenn sont formés. Tout devient si concret et merveilleux pour Emma et Anthony.",
+    "quote": "Les petits doigts et les orteils d'Eden sont formés. Tout devient si concret et merveilleux pour Emma et Anthony.",
     "icon": "FaRegSmileBeam",
     "items": [
       {
@@ -135,7 +135,7 @@ export const PREGNANCY_MONTHS: MonthSection[] = [
     "babyComparison": "Un petit avocat",
     "babySize": "~13 cm",
     "dateRange": "Janvier 2026",
-    "quote": "Le 2ème trimestre s'ouvre avec sérénité. Le joli ventre d'Emma s'arrondit doucement pour faire toute la place à Edenn.",
+    "quote": "Le 2ème trimestre s'ouvre avec sérénité. Le joli ventre d'Emma s'arrondit doucement pour faire toute la place à Eden.",
     "icon": "FaSparkles",
     "items": [
       {
@@ -182,7 +182,7 @@ export const PREGNANCY_MONTHS: MonthSection[] = [
     "babyComparison": "Une belle mangue",
     "babySize": "~25 cm",
     "dateRange": "Février - Mars 2026",
-    "quote": "Des papillons dans le ventre qui se transforment en petits frémissements : Edenn fait ses premiers petits coucous à maman et papa.",
+    "quote": "Des papillons dans le ventre qui se transforment en petits frémissements : Eden fait ses premiers petits coucous à maman et papa.",
     "icon": "FaBaby",
     "items": [
       {
@@ -341,7 +341,7 @@ export const PREGNANCY_MONTHS: MonthSection[] = [
     "babyComparison": "Un épi de maïs",
     "babySize": "~30 cm",
     "dateRange": "Mars - Avril 2026",
-    "quote": "Edenn reconnaît déjà la voix d'Anthony et d'Emma, et réagit avec bonheur à chaque caresse sur le ventre.",
+    "quote": "Eden reconnaît déjà la voix d'Anthony et d'Emma, et réagit avec bonheur à chaque caresse sur le ventre.",
     "icon": "FaMusic",
     "items": [
       {
@@ -548,7 +548,7 @@ export const PREGNANCY_MONTHS: MonthSection[] = [
     "babyComparison": "Une noix de coco",
     "babySize": "~38 cm",
     "dateRange": "Avril 2026",
-    "quote": "Un ventre magnifiquement rond où Edenn s'étire et bouge. Des souvenirs inoubliables capturés en photos et vidéos par Anthony et Emma.",
+    "quote": "Un ventre magnifiquement rond où Eden s'étire et bouge. Des souvenirs inoubliables capturés en photos et vidéos par Anthony et Emma.",
     "icon": "FaVideo",
     "items": [
       {
@@ -787,7 +787,7 @@ export const PREGNANCY_MONTHS: MonthSection[] = [
     "babyComparison": "Un bel ananas",
     "babySize": "~44 cm",
     "dateRange": "Avril - Juin 2026",
-    "quote": "Tout se prépare dans le cocon : le petit nid d'Edenn est prêt, et nos cœurs de parents débordent d'impatience.",
+    "quote": "Tout se prépare dans le cocon : le petit nid d'Eden est prêt, et nos cœurs de parents débordent d'impatience.",
     "icon": "FaHome",
     "items": [
       {
@@ -962,7 +962,7 @@ export const PREGNANCY_MONTHS: MonthSection[] = [
     "babyComparison": "Une pastèque d'amour",
     "babySize": "~50 cm",
     "dateRange": "Juin 2026",
-    "quote": "Chaque jour nous rapproche de tes premiers regards et de tes premiers sourires. Emma et Anthony t'aiment déjà infiniment, petit Edenn.",
+    "quote": "Chaque jour nous rapproche de tes premiers regards et de tes premiers sourires. Emma et Anthony t'aiment déjà infiniment, petit Eden.",
     "icon": "FaStar",
     "items": [
       {

@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
             Emma & Anthony
           </h3>
           <p className="text-xs text-pink-600 font-medium mt-0.5">
-            9 mois inoubliables pour la plus belle des rencontres avec Edenn ✨
+            9 mois inoubliables pour la plus belle des rencontres avec Eden ✨
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
         <div className="text-[10px] text-slate-400 flex items-center gap-1 mt-2">
           <span>Fait avec tendresse</span>
           <FaHeart className="text-pink-400 text-[10px]" />
-          <span>pour Edenn</span>
+          <span>pour Eden</span>
         </div>
 
       </div>

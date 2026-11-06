@@ -135,7 +135,7 @@ export const MonthSection: React.FC<MonthSectionProps> = ({
               <div className="bg-gradient-to-r from-amber-50 to-pink-50/50 p-3 rounded-2xl border border-amber-100 flex items-center gap-3">
                 <span className="text-2xl">{FRUIT_EMOJIS[month.monthNumber] || '🌱'}</span>
                 <div>
-                  <div className="text-[10px] uppercase font-bold tracking-wider text-amber-700">Taille d'Edenn</div>
+                  <div className="text-[10px] uppercase font-bold tracking-wider text-amber-700">Taille d'Eden</div>
                   <div className="text-xs font-semibold text-slate-800">{month.babyComparison}</div>
                   <div className="text-[10px] text-slate-500 font-medium">{month.babySize}</div>
                 </div>

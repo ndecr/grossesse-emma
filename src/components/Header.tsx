@@ -37,7 +37,7 @@ export const Header: React.FC<HeaderProps> = ({ activeMonthId, onSelectMonth }) 
               Emma & Anthony <FaHeart className="text-pink-500 text-xs animate-pulse" />
             </span>
             <span className="block text-[10px] tracking-wider uppercase text-pink-500 font-semibold -mt-1">
-              En attendant Edenn ✨
+              En attendant Eden ✨
             </span>
           </div>
         </a>

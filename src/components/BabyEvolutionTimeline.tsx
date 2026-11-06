@@ -49,10 +49,10 @@ export const BabyEvolutionTimeline: React.FC<BabyEvolutionTimelineProps> = ({ on
             <span>Évolution au fil des mois</span>
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight">
-            Le Ventre d'Emma s'Arrondit & Edenn Grandit
+            Le Ventre d'Emma s'Arrondit & Eden Grandit
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 font-light mt-1">
-            Sélectionnez un mois pour voir l'évolution et la taille d'Edenn.
+            Sélectionnez un mois pour voir l'évolution et la taille d'Eden.
           </p>
         </div>
 
@@ -137,7 +137,7 @@ export const BabyEvolutionTimeline: React.FC<BabyEvolutionTimelineProps> = ({ on
               <div className="bg-pink-50/70 p-4 rounded-2xl border border-pink-100 flex items-center gap-4">
                 <div className="text-3xl">{activeMilestone.fruit.emoji}</div>
                 <div>
-                  <div className="text-xs font-bold text-slate-700">Taille d'Edenn dans le ventre :</div>
+                  <div className="text-xs font-bold text-slate-700">Taille d'Eden dans le ventre :</div>
                   <div className="text-sm font-semibold text-pink-600">
                     {activeMilestone.fruit.full}
                   </div>

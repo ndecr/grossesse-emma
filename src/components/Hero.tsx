@@ -44,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({ activeMonthId, onSelectMonth }) => {
           data-aos-delay="100"
           className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-slate-800 tracking-tight leading-[1.15] mb-4"
         >
-          En attendant l'arrivée de notre petit trésor, Edenn
+          En attendant l'arrivée de notre petit trésor, Eden
         </h1>
 
         {/* Subtitle */}
@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ activeMonthId, onSelectMonth }) => {
           className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-light leading-relaxed mb-8"
         >
           9 mois d'amour, de complicité et d'émotions partagées. De la toute première annonce du 2ème mois 
-          jusqu'aux derniers jours du 9ème mois, découvrez l'aventure d'Emma et Anthony en attendant Edenn.
+          jusqu'aux derniers jours du 9ème mois, découvrez l'aventure d'Emma et Anthony en attendant Eden.
         </p>
 
         {/* Highlight Stats Badges */}
@@ -91,7 +91,7 @@ export const Hero: React.FC<HeroProps> = ({ activeMonthId, onSelectMonth }) => {
             <div className="w-8 h-8 mx-auto mb-1 rounded-full bg-amber-100 text-amber-500 flex items-center justify-center text-sm">
               <FaBaby />
             </div>
-            <div className="font-serif font-bold text-lg text-slate-800">Bébé Edenn</div>
+            <div className="font-serif font-bold text-lg text-slate-800">Bébé Eden</div>
             <div className="text-[11px] text-slate-500 font-medium">Tant attendu</div>
           </div>
         </div>
