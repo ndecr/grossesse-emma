@@ -8,20 +8,18 @@
   }
 }
 
-/* Custom soft scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+/* Hide horizontal scrollbars across all browsers for clean mobile cards */
+.scrollbar-none::-webkit-scrollbar,
+.snap-carousel::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
-::-webkit-scrollbar-track {
-  background: #fff5f7;
-}
-::-webkit-scrollbar-thumb {
-  background: #fbcfe8;
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #f472b6;
+
+.scrollbar-none,
+.snap-carousel {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
 
 /* Carousel snap highlights & smooth gestures */
@@ -30,10 +28,6 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.snap-carousel::-webkit-scrollbar {
-  display: none;
 }
 .snap-carousel > * {
   scroll-snap-align: center;

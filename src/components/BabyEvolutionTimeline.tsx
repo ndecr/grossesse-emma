@@ -6,16 +6,27 @@ interface BabyEvolutionTimelineProps {
   onOpenLightbox: (item: MediaItem) => void;
 }
 
+const FRUIT_INFO: Record<number, { emoji: string; name: string; full: string }> = {
+  2: { emoji: '🍓', name: 'Framboise', full: 'Comme une framboise (~1.5 cm)' },
+  3: { emoji: '🫐', name: 'Prune', full: 'Comme une prune (~6 à 7 cm)' },
+  4: { emoji: '🥑', name: 'Avocat', full: 'Comme un avocat (~13 cm)' },
+  5: { emoji: '🥭', name: 'Mangue', full: 'Comme une mangue (~25 cm)' },
+  6: { emoji: '🌽', name: 'Maïs', full: 'Comme un épi de maïs (~30 cm)' },
+  7: { emoji: '🥥', name: 'Coco', full: 'Comme une noix de coco (~38 cm)' },
+  8: { emoji: '🍍', name: 'Ananas', full: 'Comme un bel ananas (~44 cm)' },
+  9: { emoji: '🍉', name: 'Pastèque', full: 'Comme une pastèque d\'amour (~50 cm)' },
+};
+
 export const BabyEvolutionTimeline: React.FC<BabyEvolutionTimelineProps> = ({ onOpenLightbox }) => {
   const [selectedMonthIndex, setSelectedMonthIndex] = useState(0);
 
-  // Pick the representative photo for each month (prefer photo showing the belly, e.g. 2nd or middle item if available)
+  // Pick representative photo for each month
   const milestoneList = PREGNANCY_MONTHS.map(month => {
-    // Pick first non-video item or fallback
     const photo = month.items.find(it => !it.isVideo) || month.items[0];
     return {
       month,
-      photo
+      photo,
+      fruit: FRUIT_INFO[month.monthNumber] || { emoji: '🌱', name: 'Pousse', full: month.babyComparison }
     };
   });
 
@@ -23,7 +34,7 @@ export const BabyEvolutionTimeline: React.FC<BabyEvolutionTimelineProps> = ({ on
 
   return (
     <section className="max-w-5xl mx-auto px-4 mb-16" data-aos="fade-up">
-      <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-soft border border-pink-100/90 relative overflow-hidden">
+      <div className="glass-panel rounded-3xl p-5 sm:p-8 shadow-soft border border-pink-100/90 relative">
         
         {/* Soft background aura */}
         <div 
@@ -32,45 +43,48 @@ export const BabyEvolutionTimeline: React.FC<BabyEvolutionTimelineProps> = ({ on
         />
 
         {/* Section Header */}
-        <div className="text-center max-w-xl mx-auto mb-8">
+        <div className="text-center max-w-xl mx-auto mb-6">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full glass-pill text-[11px] font-semibold text-pink-700 shadow-sm mb-2">
             <FaSeedling className="text-emerald-500" />
-            <span>Évolution au fil du temps</span>
+            <span>Évolution au fil des mois</span>
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight">
             Le Ventre d'Emma s'Arrondit & Edenn Grandit
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 font-light mt-1">
-            Revivez en un coup d'œil l'évolution magique mois par mois, du 2ème au 9ème mois.
+            Sélectionnez un mois pour voir l'évolution et la taille d'Edenn.
           </p>
         </div>
 
-        {/* Month Selector Pills */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 scrollbar-none snap-carousel">
-          {milestoneList.map((m, idx) => {
-            const isSelected = idx === selectedMonthIndex;
-            return (
-              <button
-                key={m.month.id}
-                onClick={() => setSelectedMonthIndex(idx)}
-                className={`flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-semibold transition-all duration-200 flex flex-col items-center gap-0.5 active:scale-95 ${
-                  isSelected
-                    ? 'bg-gradient-to-r from-pink-500 to-rose-400 text-white shadow-soft scale-105'
-                    : 'bg-white/90 hover:bg-pink-50 text-slate-700 border border-pink-100'
-                }`}
-              >
-                <span>Mois {m.month.monthNumber}</span>
-                <span className={`text-[10px] ${isSelected ? 'text-pink-100' : 'text-slate-400'}`}>
-                  {m.month.babyComparison.split(' ')[1] || '🌱'}
-                </span>
-              </button>
-            );
-          })}
+        {/* Month Selector Pills - with proper horizontal padding & clean fruit labels */}
+        <div className="w-full overflow-x-auto pb-4 pt-1 px-1 scrollbar-none snap-carousel">
+          <div className="flex items-center justify-start sm:justify-center gap-2 min-w-max mx-auto px-2">
+            {milestoneList.map((m, idx) => {
+              const isSelected = idx === selectedMonthIndex;
+              return (
+                <button
+                  key={m.month.id}
+                  onClick={() => setSelectedMonthIndex(idx)}
+                  className={`flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-semibold transition-all duration-200 flex flex-col items-center gap-1 active:scale-95 ${
+                    isSelected
+                      ? 'bg-gradient-to-r from-pink-500 to-rose-400 text-white shadow-soft scale-105'
+                      : 'bg-white hover:bg-pink-50 text-slate-700 border border-pink-200/70 shadow-sm'
+                  }`}
+                >
+                  <span className="font-bold text-xs tracking-tight">Mois {m.month.monthNumber}</span>
+                  <span className={`text-[11px] font-medium flex items-center gap-1 ${isSelected ? 'text-pink-100' : 'text-slate-500'}`}>
+                    <span>{m.fruit.emoji}</span>
+                    <span>{m.fruit.name}</span>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Highlight Showcase Box */}
         {activeMilestone && (
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-12 gap-6 items-center bg-white/80 rounded-2xl p-4 sm:p-6 border border-pink-100 shadow-sm animate-in fade-in duration-300">
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-12 gap-6 items-center bg-white/85 rounded-2xl p-4 sm:p-6 border border-pink-100 shadow-sm animate-in fade-in duration-300">
             
             {/* Photo Card */}
             <div className="md:col-span-5 flex justify-center">
@@ -121,10 +135,12 @@ export const BabyEvolutionTimeline: React.FC<BabyEvolutionTimelineProps> = ({ on
 
               {/* Baby Fruit & Size info */}
               <div className="bg-pink-50/70 p-4 rounded-2xl border border-pink-100 flex items-center gap-4">
-                <div className="text-3xl">🌱</div>
+                <div className="text-3xl">{activeMilestone.fruit.emoji}</div>
                 <div>
                   <div className="text-xs font-bold text-slate-700">Taille d'Edenn dans le ventre :</div>
-                  <div className="text-sm font-semibold text-pink-600">{activeMilestone.month.babyComparison} ({activeMilestone.month.babySize})</div>
+                  <div className="text-sm font-semibold text-pink-600">
+                    {activeMilestone.fruit.full}
+                  </div>
                 </div>
               </div>
 
@@ -132,7 +148,7 @@ export const BabyEvolutionTimeline: React.FC<BabyEvolutionTimelineProps> = ({ on
                 "{activeMilestone.month.quote}"
               </p>
 
-              <div className="pt-2 flex items-center gap-3">
+              <div className="pt-2 flex flex-wrap items-center gap-3">
                 <button
                   onClick={() => onOpenLightbox(activeMilestone.photo)}
                   className="px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500 to-rose-400 text-white text-xs font-semibold shadow hover:shadow-glow transition active:scale-95 flex items-center gap-1.5"
@@ -145,7 +161,7 @@ export const BabyEvolutionTimeline: React.FC<BabyEvolutionTimelineProps> = ({ on
                   href={`#${activeMilestone.month.id}`}
                   className="px-4 py-2 rounded-xl bg-pink-50 hover:bg-pink-100 text-pink-700 text-xs font-semibold border border-pink-200 transition"
                 >
-                  Voir tout le mois ({activeMilestone.month.items.length} souvenirs) →
+                  Voir les {activeMilestone.month.items.length} souvenirs du mois →
                 </a>
               </div>
             </div>

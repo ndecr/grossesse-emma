@@ -12,6 +12,17 @@ import {
 } from 'react-icons/fa6';
 import { MonthSection as MonthSectionType, MediaItem } from '../data/pregnancyData';
 
+const FRUIT_EMOJIS: Record<number, string> = {
+  2: '🍓',
+  3: '🫐',
+  4: '🥑',
+  5: '🥭',
+  6: '🌽',
+  7: '🥥',
+  8: '🍍',
+  9: '🍉',
+};
+
 interface MonthSectionProps {
   month: MonthSectionType;
   isFirst: boolean;
@@ -122,11 +133,11 @@ export const MonthSection: React.FC<MonthSectionProps> = ({
               
               {/* Baby Fruit Comparison */}
               <div className="bg-gradient-to-r from-amber-50 to-pink-50/50 p-3 rounded-2xl border border-amber-100 flex items-center gap-3">
-                <span className="text-2xl">🌱</span>
+                <span className="text-2xl">{FRUIT_EMOJIS[month.monthNumber] || '🌱'}</span>
                 <div>
-                  <div className="text-[10px] uppercase font-bold tracking-wider text-amber-700">Taille de bébé</div>
+                  <div className="text-[10px] uppercase font-bold tracking-wider text-amber-700">Taille d'Edenn</div>
                   <div className="text-xs font-semibold text-slate-800">{month.babyComparison}</div>
-                  <div className="text-[10px] text-slate-500">{month.babySize}</div>
+                  <div className="text-[10px] text-slate-500 font-medium">{month.babySize}</div>
                 </div>
               </div>
 

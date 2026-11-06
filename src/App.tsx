@@ -12,17 +12,10 @@ import { FaHeart } from 'react-icons/fa6';
 export function App() {
   const [activeMonthId, setActiveMonthId] = useState<string>(PREGNANCY_MONTHS[0].id);
   const [lightboxItem, setLightboxItem] = useState<MediaItem | null>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
-  // Track scroll progress and active section
+  // Track active section in viewport
   useEffect(() => {
     const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalScroll > 0) {
-        setScrollProgress((window.scrollY / totalScroll) * 100);
-      }
-
-      // Determine active month in viewport
       for (const m of PREGNANCY_MONTHS) {
         const el = document.getElementById(m.id);
         if (el) {
@@ -41,13 +34,6 @@ export function App() {
 
   return (
     <div className="min-h-screen flex flex-col relative selection:bg-pink-200">
-      
-      {/* Top Thin Scroll Progress Bar */}
-      <div 
-        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-pink-400 via-rose-400 to-amber-300 z-50 transition-all duration-150"
-        style={{ width: `${scrollProgress}%` }}
-      />
-
       {/* Header */}
       <Header 
         activeMonthId={activeMonthId} 

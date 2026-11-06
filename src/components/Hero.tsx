@@ -105,33 +105,35 @@ export const Hero: React.FC<HeroProps> = ({ activeMonthId, onSelectMonth }) => {
           <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-3">
             Navigation par mois de grossesse
           </div>
-          <div className="flex items-center gap-2 overflow-x-auto pb-3 pt-1 px-1 scrollbar-none snap-carousel justify-start sm:justify-center">
-            {PREGNANCY_MONTHS.map((month) => {
-              const isActive = activeMonthId === month.id;
-              return (
-                <button
-                  key={month.id}
-                  onClick={() => {
-                    onSelectMonth(month.id);
-                    const el = document.getElementById(month.id);
-                    if (el) {
-                      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
-                  className={`flex-shrink-0 px-4 py-2 rounded-2xl text-xs font-medium transition-all duration-300 flex items-center gap-1.5 shadow-sm active:scale-95 ${
-                    isActive
-                      ? 'bg-gradient-to-r from-pink-500 to-rose-400 text-white shadow-soft scale-105 font-bold'
-                      : 'bg-white/80 hover:bg-pink-50 text-slate-700 border border-pink-100'
-                  }`}
-                >
-                  <FaHeart className={`text-[10px] ${isActive ? 'text-white' : 'text-pink-400'}`} />
-                  <span>Mois {month.monthNumber}</span>
-                  <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-pink-100 text-pink-600'}`}>
-                    {month.items.length}
-                  </span>
-                </button>
-              );
-            })}
+          <div className="w-full overflow-x-auto pb-3 pt-1 scrollbar-none snap-carousel">
+            <div className="flex items-center gap-2 min-w-max mx-auto px-4 justify-start sm:justify-center">
+              {PREGNANCY_MONTHS.map((month) => {
+                const isActive = activeMonthId === month.id;
+                return (
+                  <button
+                    key={month.id}
+                    onClick={() => {
+                      onSelectMonth(month.id);
+                      const el = document.getElementById(month.id);
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
+                    className={`flex-shrink-0 px-4 py-2 rounded-2xl text-xs font-medium transition-all duration-300 flex items-center gap-1.5 shadow-sm active:scale-95 ${
+                      isActive
+                        ? 'bg-gradient-to-r from-pink-500 to-rose-400 text-white shadow-soft scale-105 font-bold'
+                        : 'bg-white/90 hover:bg-pink-50 text-slate-700 border border-pink-100'
+                    }`}
+                  >
+                    <FaHeart className={`text-[10px] ${isActive ? 'text-white' : 'text-pink-400'}`} />
+                    <span>Mois {month.monthNumber}</span>
+                    <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-pink-100 text-pink-600'}`}>
+                      {month.items.length}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
 
