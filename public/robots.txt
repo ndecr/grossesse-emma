@@ -1,0 +1,4 @@
+# Strict privacy: Private family album
+# Accessible by direct link only, no search engine presence
+User-agent: *
+Disallow: /
