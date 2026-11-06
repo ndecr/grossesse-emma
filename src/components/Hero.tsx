@@ -16,22 +16,22 @@ export const Hero: React.FC<HeroProps> = ({ activeMonthId, onSelectMonth }) => {
   };
 
   return (
-    <section id="top" className="relative pt-8 pb-12 px-4 overflow-hidden">
-      {/* Decorative Pastel Background Glows */}
+    <section id="top" className="relative pt-8 pb-12 px-4 overflow-hidden max-w-full">
+      {/* Decorative Pastel Background Glows - strictly contained */}
       <div 
         aria-hidden="true" 
-        className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-br from-pink-200/50 via-rose-100/40 to-blue-100/30 rounded-full blur-3xl pointer-events-none -z-10"
+        className="absolute -top-16 left-1/2 -translate-x-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-gradient-to-br from-pink-200/50 via-rose-100/40 to-blue-100/30 rounded-full blur-3xl pointer-events-none -z-10"
       />
       <div 
         aria-hidden="true" 
-        className="absolute top-48 -right-20 w-80 h-80 bg-gradient-to-br from-amber-100/50 to-pink-100/30 rounded-full blur-2xl pointer-events-none -z-10"
+        className="absolute top-48 right-0 w-64 sm:w-80 h-64 sm:h-80 bg-gradient-to-br from-amber-100/40 to-pink-100/30 rounded-full blur-2xl pointer-events-none -z-10"
       />
 
       <div className="max-w-4xl mx-auto text-center">
         
         {/* Soft Badge */}
         <div 
-          data-aos="fade-down"
+          data-aos="fade-up"
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-semibold text-pink-700 shadow-soft mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-pink-500 animate-ping" />
@@ -100,13 +100,13 @@ export const Hero: React.FC<HeroProps> = ({ activeMonthId, onSelectMonth }) => {
         <div 
           data-aos="fade-up" 
           data-aos-delay="400"
-          className="mb-8"
+          className="mb-8 overflow-hidden max-w-full"
         >
           <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-3">
             Navigation par mois de grossesse
           </div>
-          <div className="w-full overflow-x-auto pb-3 pt-1 scrollbar-none snap-carousel">
-            <div className="flex items-center gap-2 min-w-max mx-auto px-4 justify-start sm:justify-center">
+          <div className="w-full overflow-x-auto pb-3 pt-1 scrollbar-none overscroll-x-contain touch-pan-x -mx-1 px-1">
+            <div className="flex items-center gap-2 px-3 w-max sm:mx-auto">
               {PREGNANCY_MONTHS.map((month) => {
                 const isActive = activeMonthId === month.id;
                 return (

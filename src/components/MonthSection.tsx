@@ -217,19 +217,19 @@ export const MonthSection: React.FC<MonthSectionProps> = ({
                   })}
                 </div>
 
-                {/* Left/Right Carousel Arrows (hidden on small touch devices, visible on hover desktop) */}
+                {/* Left/Right Carousel Arrows (hidden on touch devices, visible on desktop) */}
                 {month.items.length > 2 && (
                   <>
                     <button
                       onClick={() => scrollCarousel('left')}
-                      className="absolute -left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass-panel shadow-soft text-slate-700 hover:text-pink-600 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 hover:scale-110"
+                      className="hidden sm:flex absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass-panel shadow-soft text-slate-700 hover:text-pink-600 items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 hover:scale-110"
                       aria-label="Photo précédente"
                     >
                       <FaArrowLeft className="text-xs" />
                     </button>
                     <button
                       onClick={() => scrollCarousel('right')}
-                      className="absolute -right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass-panel shadow-soft text-slate-700 hover:text-pink-600 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 hover:scale-110"
+                      className="hidden sm:flex absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass-panel shadow-soft text-slate-700 hover:text-pink-600 items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 hover:scale-110"
                       aria-label="Photo suivante"
                     >
                       <FaArrowRight className="text-xs" />

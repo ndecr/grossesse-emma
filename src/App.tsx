@@ -76,8 +76,21 @@ export function App() {
           ))}
         </div>
 
+        {/* Generous Section Divider before Le Livre d'Or */}
+        <div className="max-w-md mx-auto mt-20 sm:mt-28 mb-10 px-4 flex items-center justify-center gap-3 text-pink-300">
+          <div className="h-px bg-pink-200 flex-grow" />
+          <FaHeart className="text-pink-400 text-xs animate-pulse" />
+          <span className="text-[11px] font-semibold tracking-widest uppercase text-slate-400">
+            Le Livre d'Amour
+          </span>
+          <FaHeart className="text-pink-400 text-xs animate-pulse" />
+          <div className="h-px bg-pink-200 flex-grow" />
+        </div>
+
         {/* Love Notes & Guestbook */}
-        <LoveNotes />
+        <div className="pb-8">
+          <LoveNotes />
+        </div>
       </main>
 
       {/* Footer */}

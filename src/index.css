@@ -3,9 +3,25 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  html,
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    position: relative;
     -webkit-tap-highlight-color: transparent;
   }
+
+  #root {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+}
+
+/* Ensure AOS elements never cause horizontal document stretching */
+[data-aos] {
+  overflow-x: hidden;
 }
 
 /* Hide horizontal scrollbars across all browsers for clean mobile cards */
@@ -22,7 +38,7 @@
   scrollbar-width: none !important;
 }
 
-/* Carousel snap highlights & smooth gestures */
+/* Carousel snap highlights & smooth gestures for media items only */
 .snap-carousel {
   display: flex;
   overflow-x: auto;
@@ -36,27 +52,15 @@
 
 /* Glassmorphism soft baby styles */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 228, 235, 0.7);
 }
 
 .glass-pill {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 215, 225, 0.6);
-}
-
-/* Shimmer placeholder */
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg, #fce7f3 25%, #fdf2f8 50%, #fce7f3 75%);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite linear;
 }

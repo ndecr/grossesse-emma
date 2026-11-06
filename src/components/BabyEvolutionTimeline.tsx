@@ -33,13 +33,13 @@ export const BabyEvolutionTimeline: React.FC<BabyEvolutionTimelineProps> = ({ on
   const activeMilestone = milestoneList[selectedMonthIndex];
 
   return (
-    <section className="max-w-5xl mx-auto px-4 mb-16" data-aos="fade-up">
-      <div className="glass-panel rounded-3xl p-5 sm:p-8 shadow-soft border border-pink-100/90 relative">
+    <section className="max-w-5xl mx-auto px-4 mb-16 overflow-hidden" data-aos="fade-up">
+      <div className="glass-panel rounded-3xl p-5 sm:p-8 shadow-soft border border-pink-100/90 relative overflow-hidden">
         
-        {/* Soft background aura */}
+        {/* Soft background aura (contained) */}
         <div 
           aria-hidden="true" 
-          className="absolute -bottom-10 -right-10 w-64 h-64 bg-pink-100/40 rounded-full blur-2xl pointer-events-none -z-10"
+          className="absolute bottom-0 right-0 w-48 h-48 bg-pink-100/40 rounded-full blur-2xl pointer-events-none -z-10"
         />
 
         {/* Section Header */}
@@ -56,9 +56,9 @@ export const BabyEvolutionTimeline: React.FC<BabyEvolutionTimelineProps> = ({ on
           </p>
         </div>
 
-        {/* Month Selector Pills - with proper horizontal padding & clean fruit labels */}
-        <div className="w-full overflow-x-auto pb-4 pt-1 px-1 scrollbar-none snap-carousel">
-          <div className="flex items-center justify-start sm:justify-center gap-2 min-w-max mx-auto px-2">
+        {/* Month Selector Pills - Fluid natural swipe without aggressive snap bouncing */}
+        <div className="w-full overflow-x-auto pb-3 pt-1 scrollbar-none overscroll-x-contain touch-pan-x -mx-1 px-1">
+          <div className="flex items-center gap-2 px-3 w-max sm:mx-auto">
             {milestoneList.map((m, idx) => {
               const isSelected = idx === selectedMonthIndex;
               return (
